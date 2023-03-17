@@ -1,0 +1,42 @@
+.Login {
+  height: 100vh !important;
+  margin: auto;
+}
+form {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  width: fit-content;
+  padding: 15px;
+}
+
+.logation {
+  position: relative;
+  text-align: center;
+}
+.logation a {
+  text-decoration: none;
+}
+.Log {
+  width: 50%;
+  cursor: pointer;
+}
+.Resgistration {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+.raido {
+  display: flex;
+  justify-content: space-between;
+}
+.active {
+  background-color: blue;
+  border-radius: 50px;
+  color: #fff;
+}
+.newaccount {
+  text-align: center;
+}
