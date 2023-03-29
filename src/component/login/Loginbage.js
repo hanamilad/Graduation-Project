@@ -1,44 +1,85 @@
-import React from 'react';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/counterSlice";
+import "./Login.css";
+import { Link, NavLink } from "react-router-dom";
 
-import './Login.css';
-import { Link } from 'react-router-dom';
 const Loginbage = () => {
+  const [email, setemail] = useState("");
+  const [pas, setpas] = useState("");
+  const dispatch = useDispatch();
+  const users = (e) => {
+    e.preventDefault()
+    dispatch(
+      login({
+        email: email,
+        name:email.slice(0,1),
+        pas: pas,
+        loggin: true,
+      })
+    );
+    window.location.href="http://localhost:3000/";
 
-  const log=document.querySelector(".Log");
-  const re=document.querySelector(".Resgistration");
-
-  const clicklog=()=>{
-    log.classList.add("active");
-    re.classList.remove("active")
-
-  }
-  const clickre=()=>{
-    re.classList.add("active");
-    log.classList.remove("active")
-
-  }
-
+  };
   return (
-    <div className="Login">
-    <form action=''>
-                 <div className="logation mb-3">
-                    <Link to="/"><div className="Log active " onClick={clicklog}>Login</div></Link>
-                    <Link to="/rej"><div className="Resgistration " onClick={clickre} >Resgistration</div></Link>
-                 </div>
-                 <div className="email mb-3"><input className='form-control' type="email" placeholder='Enter your email' required /></div>
-                 <div className="passowrd mb-3"><input className='form-control' type="password" placeholder='Confirm a password ' required/></div>
-                 <div className="raido mb-3">
-                    <div className="radioinput">
-                    <label htmlFor="check">Remmber me </label>
-                        <input type="checkbox" name='check'  id='check'  /></div>
-                    <Link to="">Forget password?</Link>
-                 </div>
-                    <input type="submit"  value="Login Now" className='btn btn-primary mb-3 form-control' />
-                <div className="newaccount">
-                    Dont have an account? <span><Link to='/rej' className=''>signup now</Link></span>
-                </div>
-    </form>
-                </div>
-  )
-}
-export default Loginbage
+    <div className="Login" id="login">
+      <Link to="/" className="title-Name">SpaceKey HomeLaunch</Link>
+      <form action="" onSubmit={(e) => users(e)}>
+        <div className="logation mb-3">
+          <NavLink to="/log" activeClassName="active">
+            <div className="Log active " >
+              Login
+            </div>
+          </NavLink>
+          <NavLink to="/rej" activeClassName="active">
+            <div className="Resgistration ">
+              Resgistration
+            </div>
+          </NavLink>
+        </div>
+        <div className="email mb-3">
+          <input
+            className="form-control"
+            type="email"
+            placeholder="Enter your email"
+            required
+            value={email}
+            onChange={(e) => setemail(e.target.value)}
+          />
+        </div>
+        <div className="passowrd mb-3">
+          <input
+            className="form-control"
+            type="password"
+            placeholder="Confirm a password "
+            required
+            value={pas}
+            onChange={(e) => setpas(e.target.value)}
+          />
+        </div>
+        <div className="raido mb-3">
+          <div className="radioinput">
+            <label htmlFor="check">Remmber me </label>
+            <input type="checkbox" name="check" id="check" />
+          </div>
+          <Link to="/forget">Forget password?</Link>
+        </div>
+        <input
+        onClick={()=>console.log("jas")}
+          type="submit"
+          value="Login Now"
+          className="btn btn-primary mb-3 form-control"
+        />
+        <div className="newaccount">
+          Dont have an account?{" "}
+          <span>
+            <Link to="/rej" className="">
+              signup now
+            </Link>
+          </span>
+        </div>
+      </form>
+    </div>
+  );
+};
+export default Loginbage;

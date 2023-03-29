@@ -4,9 +4,10 @@ import "./Login.css";
 const Rej = () => {
   return (
     <div className="Login">
-      <form action="">
+         <Link to="/" className="title-Name">SpaceKey HomeLaunch</Link>
+      <form action="/" >
         <div className="logation mb-3">
-          <Link to="/">
+          <Link to="/log">
             <div className="Log ">Login</div>
           </Link>
           <Link to="/rej">
@@ -59,7 +60,7 @@ const Rej = () => {
         <div className="newaccount">
           Already have an account{" "}
           <span>
-            <Link to="/" className="">
+            <Link to="/log" className="">
               Login now
             </Link>
           </span>

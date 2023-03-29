@@ -1,0 +1,31 @@
+.container {
+  margin-top: 20px;
+}
+.container .titel {
+  text-align: center;
+}
+.container .titel h4 {
+  font-weight: bolder;
+  position: relative;
+}
+.allview {
+  margin: 10px 0;
+}
+.container .card {
+  cursor: pointer;
+}
+.container .card:hover {
+  opacity: 88%;
+}
+.description {
+  color: #3b97ba;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bolder;
+}
+
+.pric {
+  color: #ef5e4e;
+  font-weight: bolder;
+}

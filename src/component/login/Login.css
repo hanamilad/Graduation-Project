@@ -40,3 +40,21 @@ form {
 .newaccount {
   text-align: center;
 }
+/* /////////////////////////////////// */
+.title-Name {
+  font-size: large;
+  font-weight: bold;
+  color: #3a3ab8;
+  text-align: center;
+  background-color: #929292;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+.continue {
+  background-color: rgb(108, 108, 188);
+}
+.sign {
+  margin-top: 25px;
+  text-align: center;
+}
