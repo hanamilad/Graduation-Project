@@ -1,8 +1,21 @@
 import React from "react";
 import "./Mainsection.css";
 import data from "../../Json/data";
+import {Link} from 'react-router-dom'
+import { useDispatch } from "react-redux";
+import { AddProdectInItemPage } from "../../redux/counterSlice";
 
 const Mainsection = () => {
+
+
+  const dispatch=useDispatch();
+
+  const additem=(item)=>{
+    dispatch(AddProdectInItemPage(item))
+  }
+
+
+
   return (
     <div className="container">
       <div className="row">
@@ -11,19 +24,18 @@ const Mainsection = () => {
         </div>
         {data.map((data) => {
           return (
-            <div className="col-lg-4 col-sm-12 allview">
-              <div class="card" style={{ width: "18rem;" }} key={data.id}>
-                <img src={data.img} class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <p class="card-text description">{data.description}</p>
+            <Link to="/item" onClick={()=>{additem(data)}}  className="col-lg-4 col-sm-12 allview">
+              <div className="card" style={{ width: "auto" }} key={data.id}>
+                <img src={data.img} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <p className="card-text description">{data.description}</p>
                   <p className="typepart">
-                    {" "}
                     {data.type}
                     <span className="pric"> {data.price}</span>
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

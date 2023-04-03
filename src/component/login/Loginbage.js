@@ -18,8 +18,7 @@ const Loginbage = () => {
         loggin: true,
       })
     );
-    window.location.href="http://localhost:3000/";
-
+    window.location =window.location.protocol + "//"+ window.location.hostname +":" + window.location.port + "/";
   };
   return (
     <div className="Login" id="login">
@@ -65,7 +64,6 @@ const Loginbage = () => {
           <Link to="/forget">Forget password?</Link>
         </div>
         <input
-        onClick={()=>console.log("jas")}
           type="submit"
           value="Login Now"
           className="btn btn-primary mb-3 form-control"

@@ -10,6 +10,7 @@
 }
 .allview {
   margin: 10px 0;
+  text-decoration: none;
 }
 .container .card {
   cursor: pointer;

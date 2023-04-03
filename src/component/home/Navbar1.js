@@ -4,7 +4,7 @@ import {  useDispatch, useSelector } from "react-redux";
 import { selector } from "../../redux/counterSlice";
 import { logout } from "../../redux/counterSlice";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar1 = () => {
 
@@ -24,23 +24,25 @@ const Navbar1 = () => {
     <header>
       <h3>
         <Link  to="/">
-        <i class="fa-solid fa-house-signal"></i>
+        <i className="fa-solid fa-house-signal"></i>
         SpaceKey <br />
         HomeLaunch
         </Link>
       </h3>
       <nav ref={navRef}>
-        <Link to="/buy">Buy</Link>
-        <Link to="/rent">Rent</Link>
-        <Link to="/commercial">commercial</Link>
-        <Link to="/Newproject">New project</Link>
-        <Link to="/ourclint">Our clients</Link>
+        <NavLink activeClassName="active" to="/buy">Buy</NavLink>
+        <NavLink activeClassName="active" to="/rent">Rent</NavLink>
+        <NavLink activeClassName="active" to="/commercial">commercial</NavLink>
+        <NavLink activeClassName="active" to="/Newproject">New project</NavLink>
+        <NavLink activeClassName="active" to="/ourclint">Our clients</NavLink>
         {user ? (
           <>
           <Link to="/rej">
             <div className="btn Navloginbtn " onClick={()=>Out()}>Logout</div>
           </Link>
-<Link to="/account" className="Nameuser">{user.name}</Link>
+<Link to="/account" className="Nameuser">
+  <span className="redpoint"></span>
+  {user.name}</Link>
           
           </>
         ) : (
@@ -48,10 +50,10 @@ const Navbar1 = () => {
             <div className="btn Navloginbtn ">Login</div>
           </Link>
         )}
-        <button className="nav-btn nav-close-btn" onClick={showNavbar}><i class="fa-solid fa-circle-xmark"></i></button>
+        <button className="nav-btn nav-close-btn" onClick={showNavbar}><i className="fa-solid fa-circle-xmark"></i></button>
       </nav>
       <button className="nav-btn" onClick={showNavbar}>
-      <i class="fa-solid fa-bars"></i>
+      <i className="fa-solid fa-bars"></i>
       </button>
     </header>
   );

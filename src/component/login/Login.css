@@ -32,7 +32,7 @@ form {
   display: flex;
   justify-content: space-between;
 }
-.active {
+.Login .active {
   background-color: blue;
   border-radius: 50px;
   color: #fff;
@@ -58,3 +58,4 @@ form {
   margin-top: 25px;
   text-align: center;
 }
+

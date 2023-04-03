@@ -4,6 +4,19 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Loginbage from "./component/login/Loginbage";
 import Rej from "./component/login/Rej";
 import Forgetpas from "./component/login/Forgetpas";
+import Account from "./component/account/Account";
+import Item from "./component/item/item";
+import Buy from "./component/LinkNav/buy/Buy";
+import Rent from "./component/LinkNav/Rent/Rent";
+import Commercial from "./component/LinkNav/commercial/commercial";
+import Newproject from "./component/LinkNav/Newproject/Newproject";
+import Ourclint from "./component/LinkNav/Ourclint/Ourclint";
+import Terms from "./component/USEFUL_LINKS/Terms&Conditions/Terms";
+import About from "./component/USEFUL_LINKS/About_us/About";
+import PrivacyPolicy from "./component/USEFUL_LINKS/PrivacyPolicy/PrivacyPolicy";
+import Cookies from "./component/USEFUL_LINKS/CookiesPolicy.js/Cookies";
+import Contacted from "./component/account/Contacted/Contacted";
+import Notes from './component/account/Note/Notes';
 
 function App() {
   return (
@@ -13,6 +26,20 @@ function App() {
         <Route element={<Loginbage />} path="/log" />
         <Route element={<Rej />} path="/rej" />
         <Route element={<Forgetpas />} path="/forget" />
+        <Route element={<Account />} path="/account" />
+        <Route element={<Item />} path="/item" />
+        <Route element={<Buy />} path="/buy" />
+        <Route element={<Rent />} path="/rent" />
+        <Route element={<Commercial />} path="/commercial" />
+        <Route element={<Newproject />} path="/Newproject" />
+        <Route element={<Ourclint />} path="/ourclint" />
+        <Route element={<Terms />} path="/Terms" />
+        <Route element={<About />} path="/Aboutus" />
+        <Route element={<PrivacyPolicy />} path="/Privacy" />
+        <Route element={<Cookies />} path="/Cookies" />
+        <Route element={<Contacted />} path="/Contacted" />
+        <Route element={<Notes />} path="/mynotes" />
+
       </Routes>
     </BrowserRouter>
   );

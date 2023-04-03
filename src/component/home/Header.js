@@ -31,7 +31,7 @@ const Header = () => {
           <Select options={min_price} placeholder="Min-price " />
           <Select options={max_price} placeholder="Max-price " />
           <button className="submitbtn" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
       </form>

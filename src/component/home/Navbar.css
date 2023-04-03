@@ -74,7 +74,7 @@ nav {
     gap: 1.5rem;
     background-color: var(--mainColor);
     transition: 1s;
-    z-index: 1;
+    z-index: 5;
   }
 
   header .responsive_nav {
@@ -105,6 +105,7 @@ nav {
   margin-left: 10px;
 }
 .Nameuser {
+  position: relative;
   background-color: #fff;
   text-transform: capitalize;
   color: #db2b39;
@@ -113,4 +114,17 @@ nav {
   font-size: larger;
   width: 30px;
   padding: 0 7px;
+}
+.redpoint{
+  display: none;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: red;
+  top: 0;
+  right: 0;
+}
+header .active{
+  color:#ef5e4e ;
 }
