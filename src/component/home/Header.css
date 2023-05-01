@@ -10,10 +10,10 @@
   width: 100%;
   height: 60vh;
 }
-.rent:hover {
+.Header .rent:hover {
   background-color: #80808024;
 }
-.buy:hover {
+.Header .buy:hover {
   background-color: #80808024;
 }
 .search {

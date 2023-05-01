@@ -1,24 +1,24 @@
-.container {
+.Mainsection .container {
   margin-top: 20px;
 }
-.container .titel {
+.Mainsection .container .titel {
   text-align: center;
 }
-.container .titel h4 {
+.Mainsection .container .titel h4 {
   font-weight: bolder;
   position: relative;
 }
-.allview {
+.Mainsection .allview {
   margin: 10px 0;
   text-decoration: none;
 }
-.container .card {
+.Mainsection .container .card {
   cursor: pointer;
 }
-.container .card:hover {
+.Mainsection .container .card:hover {
   opacity: 88%;
 }
-.description {
+.Mainsection .description {
   color: #3b97ba;
   white-space: nowrap;
   overflow: hidden;
@@ -26,7 +26,7 @@
   font-weight: bolder;
 }
 
-.pric {
+.Mainsection .pric {
   color: #ef5e4e;
   font-weight: bolder;
 }

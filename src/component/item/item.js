@@ -17,9 +17,9 @@ import Footer from "../footer/footer";
 
 const Item = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [iscall,setcall]=useState(true)
   const item = useSelector(selectoritem);
   const dispatch=useDispatch();
-
   const favicon=(item)=>{
 dispatch(AdditemInfavpage(item))
   }
@@ -106,10 +106,10 @@ dispatch(AdditemInfavpage(item))
               </div>
               <div className="contact">
                 <div className="price">{item.price}</div>
-                <div className="call">
+                <div className="call" onClick={()=>{setcall(!iscall)}}>
                   <div className="phone btn-danger btn">
                     <i className="fa-sharp fa-solid fa-phone"></i>
-                    <span>Call</span>
+                    <span>{iscall ? "call" :item.number}</span>
                   </div>
                   <div
                     className="email btn-danger btn"
@@ -120,10 +120,11 @@ dispatch(AdditemInfavpage(item))
                     <i className="fa-solid fa-envelope"></i>
                     <span>Email</span>
                   </div>
-                  <div className="whatsapp btn btn-success">
+                  <a className="whatsapp btn btn-success"  href="http://www.whatsapp.com" target="_blank" >
+                    
                     <i className="fa-brands fa-whatsapp"></i>
                     <span>WhatsApp</span>
-                  </div>
+                  </a>
                 </div>
                 <div className="fav btn btn-primary form-control"  onClick={()=>{favicon(item)}}>
                   <i className="fa-sharp fa-solid fa-heart"></i>

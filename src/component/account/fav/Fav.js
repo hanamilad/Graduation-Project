@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { delet, messege, selectoraccont } from '../../../redux/counterSlice'
 import './Fav.css'
@@ -17,6 +17,8 @@ import "swiper/css/navigation";
 // import required modules
 import { EffectFlip, Pagination, Navigation } from "swiper";
 const Fav = () => {
+const [iscall,setcall]=useState(true);
+
     const accont=useSelector(selectoraccont)
     const dispatch=useDispatch()
 
@@ -28,10 +30,12 @@ return (
     <>
 {accont.length !==0? accont.map((item)=>{
     return(
-<div className='card' key={item.id}>
-    <div className="top">
-        <div className="img">
-        <Swiper
+      <div className="carditem  col-lg-12 col-sm-12" key={item.id}>
+        <div className="row">
+
+       
+      <div className="photoitem col-lg-4 col-sm-12">
+      <Swiper
         effect={"flip"}
         grabCursor={true}
         pagination={true}
@@ -49,34 +53,55 @@ return (
           <img src={item.img} />
         </SwiperSlide>
       </Swiper>
+      </div>
+      <div className="col-lg-8 col-sm-12 detelsitem">
+        <div>office space</div>
+        <div
+          style={{
+            fontWeight: "bold",
+            fontSize: "1.5rem",
+            color: "black",
+          }}
+        >
+          {item.price}
         </div>
-        <div className="information">   
-        <div className="description">{item.description}</div>
-        <div className="PropertySize">{item.PropertySize}sqm</div>
+        <div className="textover">{item.description}</div>
+        <div className="textover"><i class="fa-solid fa-location-dot pad"></i>{item.location}</div>
+        <div className="footerdetesitem">
+          <div className="">
+            <i class="fa-sharp fa-solid fa-bath"></i>{" "}
+            {item.Bathrooms} Bathroom
+          </div>
+          <div className="">
+            <i class="fa-sharp fa-solid fa-city"></i>{" "}
+            {item.PropertySize} sqm
+          </div>
         </div>
+      </div>
+      <div className="col-12 contactiem">
+        <div className="timepost">Listed 11 days ago</div>
+        <div className="socialmedia">
+          <div className="btn call" onClick={()=>{setcall(!iscall)}}>
+            <i
+              class="fa-solid fa-phone pad"
+            ></i>
+           {iscall ? "Call" : item.number}
+          </div>
+          <div className="btn email" onClick={()=>{dispatch(messege())}}>
+          <i class="fa-solid fa-envelope pad"></i>
+          Email
+          </div>
+          <a className="btn whats" href='http://www.whatsapp.com' target='_black'>
+          <i class="fa-brands fa-whatsapp pad"></i>
+          WhatsApp
+          </a>
+          <div className="btn love">
+          <i class="fa-sharp fa-solid fa-heart" onClick={()=>{remove(item)}}></i>
+          </div>
         </div>
-        <div className="button">
-                  <div className="phone btn-danger btn">
-                    <i className="fa-sharp fa-solid fa-phone"></i>
-                    <span>Call</span>
-                  </div>
-                  <div
-                    className="email btn-danger btn" onClick={()=>{dispatch(messege())}}
-                  >
-                    <i className="fa-solid fa-envelope"></i>
-                    <span>Email</span>
-                  </div>
-                  <div className="whatsapp btn btn-success">
-                    <i className="fa-brands fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                  </div>
-                  <div className="heart">
-                  <i class="fa-sharp fa-solid fa-heart" onClick={()=>{remove(item)}}></i>
-                  </div>
-        </div>
-
-      
-</div>
+      </div>
+      </div>
+    </div>
     )
 })
 : 

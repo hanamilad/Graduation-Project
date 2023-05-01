@@ -2,13 +2,17 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import Navbar1 from '../../home/Navbar1';
 import { useDispatch, useSelector } from 'react-redux';
-import { DeletAll, favcounter } from '../../../redux/counterSlice';
-import { datacity } from '../../home/Data';
+import { Contact, DeletAll, favcounter, mynotes } from '../../../redux/counterSlice';
+import { datacity, sortby } from '../../../Json/Data';
+import Select from 'react-select';
+import photo from '../desert-landscape.jpg';
 
 const Contacted = () => {
 
 
     const counterfav=useSelector(favcounter);
+    const countercontact=useSelector(Contact);
+    const countermynote=useSelector(mynotes);
     const dispatch=useDispatch();
     
     
@@ -25,32 +29,32 @@ const Contacted = () => {
             <div className="MyAccount">My Account</div>
             <div className="Category">
               <label htmlFor="Category">Category:</label>
-              <select id="Category">
-                {datacity.map((item) => {
-                  return <option value={item.value}>{item.label}</option>;
-                })}
-              </select>
+<Select options={datacity} placeholder="Property type" />
               <div className="delet btn" onClick={()=>{delet()}}>
               <i class="fa-solid fa-trash"></i>
                 Delet all
               </div>
             </div>
             <div className="sortby">
-                <label htmlFor="">Sort by:</label>
-                <select name="" id="sortby">
-                    <option value="Recently saved">Recently saved</option>
-                    <option value="price (low)">price (low)</option>
-                    <option value="price (high)">price (high)</option>
-                </select>
+                <label >Sort by:</label>
+                <Select  options={sortby} placeholder="Featured" />
             </div>
           </div>
           <div className="col-lg-4 col-sm-12 items">
             <NavLink to="/account" activeClassName="activelineaccunt" className="item">Saved properties({counterfav})</NavLink>
-            <NavLink to="/Contacted" activeClassName="activelineaccunt" className="item">Contacted properties()</NavLink>
-            <NavLink to="/mynotes" activeClassName="activelineaccunt" className="item">my notes()</NavLink>
+            <NavLink to="/Contacted" activeClassName="activelineaccunt" className="item">Contacted properties({countercontact})</NavLink>
+            <NavLink to="/mynotes" activeClassName="activelineaccunt" className="item">my notes({countermynote})</NavLink>
           </div>
           <div className="col-lg-6 col-sm-12">
 
+          <div className="col-lg-6 col-sm-12 empity">
+  <div className="empty-img">
+    <img src={photo} alt="" />
+  </div>
+  <div className="No-saved">
+    <h3>No Saved Properties</h3>
+  </div>
+  </div>
 
           </div>
         </div>

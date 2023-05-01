@@ -16,7 +16,9 @@ import About from "./component/USEFUL_LINKS/About_us/About";
 import PrivacyPolicy from "./component/USEFUL_LINKS/PrivacyPolicy/PrivacyPolicy";
 import Cookies from "./component/USEFUL_LINKS/CookiesPolicy.js/Cookies";
 import Contacted from "./component/account/Contacted/Contacted";
-import Notes from './component/account/Note/Notes';
+import Notes from "./component/account/Note/Notes";
+import Terms2 from "./component/USEFUL_LINKS/Terms&Conditions/Terms2";
+import Broker from "./component/LinkNav/Ourclint/broker/Broker";
 
 function App() {
   return (
@@ -31,7 +33,6 @@ function App() {
         <Route element={<Buy />} path="/buy" />
         <Route element={<Rent />} path="/rent" />
         <Route element={<Commercial />} path="/commercial" />
-        <Route element={<Newproject />} path="/Newproject" />
         <Route element={<Ourclint />} path="/ourclint" />
         <Route element={<Terms />} path="/Terms" />
         <Route element={<About />} path="/Aboutus" />
@@ -39,7 +40,8 @@ function App() {
         <Route element={<Cookies />} path="/Cookies" />
         <Route element={<Contacted />} path="/Contacted" />
         <Route element={<Notes />} path="/mynotes" />
-
+        <Route element={<Terms2 />} path="/forAgent" />
+        <Route element={<Broker />} path="/ourclint/broker" />
       </Routes>
     </BrowserRouter>
   );

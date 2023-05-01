@@ -1,6 +1,6 @@
 import React from "react";
 import "./Mainsection.css";
-import data from "../../Json/data";
+import data from "../../Json/ele.json";
 import {Link} from 'react-router-dom'
 import { useDispatch } from "react-redux";
 import { AddProdectInItemPage } from "../../redux/counterSlice";
@@ -17,7 +17,7 @@ const Mainsection = () => {
 
 
   return (
-    <div className="container">
+    <div className="container Mainsection">
       <div className="row">
         <div className="col-12 titel">
           <h4>Recommended properties in Egypt</h4>

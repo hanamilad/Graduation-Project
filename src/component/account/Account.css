@@ -10,10 +10,10 @@ grid-template-columns: auto auto auto ;
     color:#0000009e;
     margin: 0 5px;
 }
-.accountcol select{
-    padding: 5px;
-    border-radius: 10px;
-
+.accountcol .sortby,.accountcol .Category{
+display: flex;
+align-items: center;
+z-index: 4;
 }
 .delet{
     border: 1px solid #00000066;

@@ -12,19 +12,17 @@ const Navbar1 = () => {
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
+    document.querySelector(".redpointbars").style.display="none";
   };
   const user = useSelector(selector);
   const Dispatch=useDispatch();
   const Out=()=>{
-    console.log("hana")
     Dispatch(logout())
   }
-
   return (
     <header>
-      <h3>
+      <h3 className="LOGOFONT">
         <Link  to="/">
-        <i className="fa-solid fa-house-signal"></i>
         SpaceKey <br />
         HomeLaunch
         </Link>
@@ -33,7 +31,6 @@ const Navbar1 = () => {
         <NavLink activeClassName="active" to="/buy">Buy</NavLink>
         <NavLink activeClassName="active" to="/rent">Rent</NavLink>
         <NavLink activeClassName="active" to="/commercial">commercial</NavLink>
-        <NavLink activeClassName="active" to="/Newproject">New project</NavLink>
         <NavLink activeClassName="active" to="/ourclint">Our clients</NavLink>
         {user ? (
           <>
@@ -52,7 +49,8 @@ const Navbar1 = () => {
         )}
         <button className="nav-btn nav-close-btn" onClick={showNavbar}><i className="fa-solid fa-circle-xmark"></i></button>
       </nav>
-      <button className="nav-btn" onClick={showNavbar}>
+      <button className="nav-btn navbars" onClick={showNavbar}>
+      <span className="redpointbars"></span>
       <i className="fa-solid fa-bars"></i>
       </button>
     </header>

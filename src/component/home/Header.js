@@ -1,11 +1,10 @@
 import React from "react";
 import "./Header.css";
 import Select from "react-select";
-import { datacity, databed, min_price, max_price } from "./Data";
+import { datacity, databed, min_price, max_price } from "../../Json/Data";
 
 const Header = () => {
   const hed = document.querySelectorAll(".buy-rent .btn");
-  console.log(hed);
   hed.forEach((el) => {
     el.addEventListener("click", () => {
       document.querySelector(".active")?.classList.remove("active");
@@ -25,7 +24,7 @@ const Header = () => {
             className="form-control"
             placeholder="City or Town or District"
           />
-          <Select options={datacity} placeholder="City or Town or District" />
+          <Select options={datacity} placeholder="type" />
           <Select isMulti options={databed} placeholder="Bed" />
           <Select isMulti options={databed} placeholder="Bath " />
           <Select options={min_price} placeholder="Min-price " />

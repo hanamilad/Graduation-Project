@@ -27,6 +27,9 @@ h3 a {
   color: #fff;
   text-decoration: none;
 }
+.LOGOFONT a{
+  font-family: 'Dancing Script', cursive;
+}
 nav a {
   margin: 0 1rem;
   color: var(--textColor);
@@ -127,4 +130,17 @@ nav {
 }
 header .active{
   color:#ef5e4e ;
+}
+.navbars{
+  position: relative;
+}
+.redpointbars{
+  display: none;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: red;
+  top: 5px;
+  right: 0;
 }
