@@ -2,14 +2,11 @@ import "./App.css";
 import Home from "./component/home/home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Loginbage from "./component/login/Loginbage";
-import Rej from "./component/login/Rej";
-import Forgetpas from "./component/login/Forgetpas";
 import Account from "./component/account/Account";
 import Item from "./component/item/item";
 import Buy from "./component/LinkNav/buy/Buy";
 import Rent from "./component/LinkNav/Rent/Rent";
 import Commercial from "./component/LinkNav/commercial/commercial";
-import Newproject from "./component/LinkNav/Newproject/Newproject";
 import Ourclint from "./component/LinkNav/Ourclint/Ourclint";
 import Terms from "./component/USEFUL_LINKS/Terms&Conditions/Terms";
 import About from "./component/USEFUL_LINKS/About_us/About";
@@ -24,10 +21,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Home />} path="/" />
+        <Route element={<Home />} path="/home" />
         <Route element={<Loginbage />} path="/log" />
-        <Route element={<Rej />} path="/rej" />
-        <Route element={<Forgetpas />} path="/forget" />
         <Route element={<Account />} path="/account" />
         <Route element={<Item />} path="/item" />
         <Route element={<Buy />} path="/buy" />

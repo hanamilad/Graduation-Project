@@ -1,5 +1,5 @@
 export const datacity = [
-  { label: "Apartment", value: "2" },
+  { label: "Apartment", value: "2 " },
   { label: "villa", value: "3" },
   { label: "Townhouse", value: "4" },
   { label: "penthouse", value: "5" },
@@ -42,7 +42,7 @@ export const max_price = [
   { label: "9,000,000 ", value: "9 " },
 ];
 export const sortby = [
-  { label: "price (low)", value: "1" },
+  { label: "price (low)", value: "1"  },
   { label: "price (high)", value: "2" },
   { label: "Newest", value: "3" },
 ];

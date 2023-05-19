@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Navbar1 from '../../home/Navbar1';
 import { useDispatch, useSelector } from 'react-redux';
 import { Contact, DeletAll, favcounter, mynotes } from '../../../redux/counterSlice';
-import { datacity, sortby } from '../../../Json/Data';
+import { sortby } from '../../../Json/Data';
 import Select from 'react-select';
 import photo from '../desert-landscape.jpg';
 
@@ -28,8 +28,6 @@ const Contacted = () => {
           <div className="col-12 accountcol">
             <div className="MyAccount">My Account</div>
             <div className="Category">
-              <label htmlFor="Category">Category:</label>
-<Select options={datacity} placeholder="Property type" />
               <div className="delet btn" onClick={()=>{delet()}}>
               <i class="fa-solid fa-trash"></i>
                 Delet all
@@ -53,6 +51,7 @@ const Contacted = () => {
   </div>
   <div className="No-saved">
     <h3>No Saved Properties</h3>
+    <p>Here you will find the properties you inquired about</p>
   </div>
   </div>
 

@@ -18,10 +18,9 @@ import "swiper/css/navigation";
 import { EffectFlip, Pagination, Navigation } from "swiper";
 const Fav = () => {
 const [iscall,setcall]=useState(true);
-
     const accont=useSelector(selectoraccont)
+ 
     const dispatch=useDispatch()
-
     const remove=(item)=>{
         dispatch(delet(item))
     }
@@ -79,7 +78,6 @@ return (
         </div>
       </div>
       <div className="col-12 contactiem">
-        <div className="timepost">Listed 11 days ago</div>
         <div className="socialmedia">
           <div className="btn call" onClick={()=>{setcall(!iscall)}}>
             <i

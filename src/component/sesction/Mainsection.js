@@ -6,8 +6,6 @@ import { useDispatch } from "react-redux";
 import { AddProdectInItemPage } from "../../redux/counterSlice";
 
 const Mainsection = () => {
-
-
   const dispatch=useDispatch();
 
   const additem=(item)=>{

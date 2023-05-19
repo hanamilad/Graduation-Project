@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { useSelector,useDispatch } from "react-redux";
-import { AdditemInfavpage, selectoritem,messege } from "../../redux/counterSlice";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  AdditemInfavpage,
+  selectoritem,
+  messege,
+} from "../../redux/counterSlice";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Navbar1 from "../home/Navbar1";
 
@@ -17,12 +21,12 @@ import Footer from "../footer/footer";
 
 const Item = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const [iscall,setcall]=useState(true)
+  const [iscall, setcall] = useState(true);
   const item = useSelector(selectoritem);
-  const dispatch=useDispatch();
-  const favicon=(item)=>{
-dispatch(AdditemInfavpage(item))
-  }
+  const dispatch = useDispatch();
+  const favicon = (item) => {
+    dispatch(AdditemInfavpage(item));
+  };
   return (
     <div>
       <Navbar1 />
@@ -106,10 +110,15 @@ dispatch(AdditemInfavpage(item))
               </div>
               <div className="contact">
                 <div className="price">{item.price}</div>
-                <div className="call" onClick={()=>{setcall(!iscall)}}>
+                <div
+                  className="call"
+                  onClick={() => {
+                    setcall(!iscall);
+                  }}
+                >
                   <div className="phone btn-danger btn">
                     <i className="fa-sharp fa-solid fa-phone"></i>
-                    <span>{iscall ? "call" :item.number}</span>
+                    <span>{iscall ? "call" : item.number}</span>
                   </div>
                   <div
                     className="email btn-danger btn"
@@ -120,17 +129,73 @@ dispatch(AdditemInfavpage(item))
                     <i className="fa-solid fa-envelope"></i>
                     <span>Email</span>
                   </div>
-                  <a className="whatsapp btn btn-success"  href="http://www.whatsapp.com" target="_blank" >
-                    
+                  <a
+                    className="whatsapp btn btn-success"
+                    href="http://www.whatsapp.com"
+                    target="_blank"
+                  >
                     <i className="fa-brands fa-whatsapp"></i>
                     <span>WhatsApp</span>
                   </a>
                 </div>
-                <div className="fav btn btn-primary form-control"  onClick={()=>{favicon(item)}}>
+                <div
+                  className="fav btn btn-primary form-control"
+                  onClick={() => {
+                    favicon(item);
+                  }}
+                >
                   <i className="fa-sharp fa-solid fa-heart"></i>
                   <span>Save To shortlist</span>
                 </div>
               </div>
+              <hr />
+            </div>
+            <div className="more-detailes">
+              <div className="location">
+                <div className="titel-more-detailes">
+                  <h4>
+                    <b>Location</b>
+                  </h4>
+                </div>
+                <div className="map">
+                  <div className="map-background">
+                    <a
+                      href="https://www.google.com/maps/"
+                      target="_blanck"
+                      className="btn"
+                    >
+                      map
+                    </a>
+                  </div>
+                  <div className="maptext">
+                    <h6>{item.location}</h6>
+                  </div>
+                </div>
+              </div>
+              <div className="Agent">
+                <div className="titel-more-detailes">
+                  <h4>
+                    <b>Agent</b>
+                  </h4>
+                </div>
+                <div className="Agent-broker">
+                  <div className="phot">
+                    <img
+                      src="https://www.propertyfinder.eg/dist/common/assets/01bfd7f725.agent-tile-placeholder.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div className="name-agent">{item.AgentName}</div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div className="Description_for_user">
+              <h5>
+                <b>Description</b>
+              </h5>
+              <br />
+              <p>{item.moreDescription}</p>
             </div>
           </div>
         );

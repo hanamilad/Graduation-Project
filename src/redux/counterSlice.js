@@ -101,6 +101,7 @@ export const counterSlice = createSlice({
       state.favcount--;
       state.accunt = nextCartItems;
       localStorage.setItem("itemaccount", state.accunt);
+      localStorage.setItem("favcount", state.favcount);
     },
     DeletAll: (state, action) => {
       state.accunt = [];

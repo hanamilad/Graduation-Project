@@ -4,34 +4,54 @@ import Footer from "../../footer/footer";
 import { Link } from "react-router-dom";
 import "./buy.css";
 import Select from "react-select";
-import { sortby, datacity } from "../../../Json/Data";
-import ele from "../../../Json/ele.json";
-import { AddProdectInItemPage, AdditemInfavpage,messege } from "../../../redux/counterSlice";
+import { sortby } from "../../../Json/Data";
+import ele from '../../../Json/Elemint'
+// import ele from "../../../Json/ele.json";
+import {
+  AddProdectInItemPage,
+  AdditemInfavpage,
+  messege,
+} from "../../../redux/counterSlice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 
 const Buy = () => {
-const [iscall,setcall]=useState(true);
+  const filterdata = ele.filter((ele) => ele.TheOffer === "SALE");
+  const [data, setdata] = useState(filterdata);
 
-  const dispatch=useDispatch();
-  const favicon=(item)=>{
-dispatch(AdditemInfavpage(item))
-  }
-  const additem=(item)=>{
-    dispatch(AddProdectInItemPage(item))
-  }
+  const handelLowPrice = (e) => {
+    if (e.value == 1) {
+      const sort = [...filterdata].sort((a, b) => (a.price > b.price ? 1 : -1));
+      setdata(sort);
+    } else if (e.value == 2) {
+      const sort = [...filterdata].sort((a, b) => (a.price < b.price ? 1 : -1));
+      setdata(sort);
+    } else if (e.value == 3) {
+      const sort = [...filterdata].sort((a, b) => (a.date > b.date ? 1 : -1));
+      setdata(sort);
+    } else {
+      setdata(data);
+    }
+  };
 
+  const [iscall, setcall] = useState(true);
 
+  const dispatch = useDispatch();
+  const favicon = (item) => {
+    dispatch(AdditemInfavpage(item));
+  };
+  const additem = (item) => {
+    dispatch(AddProdectInItemPage(item));
+  };
   return (
     <>
       <Navbar1 />
-
       <div className="buy sidebage">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <div className="first-line">
-                <Link to="/">
+                <Link to="/home">
                   <i class="fa-solid fa-house"></i>
                 </Link>
                 <span className="shap"> > </span>
@@ -44,26 +64,19 @@ dispatch(AdditemInfavpage(item))
               </div>
               <div className="third-line">
                 <div className="result">
-                 
-                  <span>50</span> results
+                  <span>{filterdata.length}</span> results
                 </div>
                 <div className="sortby">
                   <label htmlFor="">Sort by:</label>
-                  <Select options={sortby} placeholder="Featured" />
+                  <Select
+                    options={sortby}
+                    placeholder="Featured"
+                    onChange={handelLowPrice}
+                  />
                 </div>
               </div>
-              <div className="propertylink">
-                {datacity.map((ele) => {
-                  return (
-                    <div className="propname" id={ele.value}>
-                      <Link to="">{ele.label}</Link>
-                      (2000)
-                    </div>
-                  );
-                })}
-              </div>
               <div className="buyitems">
-                {ele.map((ele) => {
+                {data.map((ele) => {
                   return (
                     <div className="carditem row" key={ele.id}>
                       <div className="col-lg-4 col-sm-12 photoitem">
@@ -81,7 +94,10 @@ dispatch(AdditemInfavpage(item))
                           {ele.price}
                         </div>
                         <div className="textover">{ele.description}</div>
-                        <div className="textover"><i class="fa-solid fa-location-dot pad"></i>{ele.location}</div>
+                        <div className="textover">
+                          <i class="fa-solid fa-location-dot pad"></i>
+                          {ele.location}
+                        </div>
                         <div className="footerdetesitem">
                           <div className="">
                             <i class="fa-sharp fa-solid fa-bath"></i>{" "}
@@ -94,35 +110,73 @@ dispatch(AdditemInfavpage(item))
                         </div>
                       </div>
                       <div className="col-12 contactiem">
-                        <div className="timepost">Listed 11 days ago</div>
+                        <div className="timepost">Listed {ele.date.toDateString()} ago</div>
                         <div className="socialmedia">
-                          <div className={iscall ?"btn call callclint displayblock" : "displaynone"} onClick={()=>{setcall(!iscall)}}>
-                            <i
-                              class="fa-solid fa-phone pad"
-                            ></i>
+                          <div
+                            className={
+                              iscall
+                                ? "btn call callclint displayblock"
+                                : "displaynone"
+                            }
+                            onClick={() => {
+                              setcall(!iscall);
+                            }}
+                          >
+                            <i class="fa-solid fa-phone pad"></i>
                             Call
-                            
                           </div>
-                          <div className={iscall ?"displaynone" : " btn number displayblock" } >
+                          <div
+                            className={
+                              iscall
+                                ? "displaynone"
+                                : " btn number displayblock"
+                            }
+                          >
                             <span className="">{ele.number}</span>
-                          
-                          <span className='back' onClick={()=>{setcall(!iscall)}}>back</span>
 
+                            <span
+                              className="back"
+                              onClick={() => {
+                                setcall(!iscall);
+                              }}
+                            >
+                              back
+                            </span>
                           </div>
-                          <div className="btn email"   onClick={() => {
-                      dispatch(messege());
-                    }}>
-                          <i class="fa-solid fa-envelope pad"></i>
-                          Email
+                          <div
+                            className="btn email"
+                            onClick={() => {
+                              dispatch(messege());
+                            }}
+                          >
+                            <i class="fa-solid fa-envelope pad"></i>
+                            Email
                           </div>
-                          <a className="btn whats" href="http://www.whatsapp.com" target="_blank">
-                          <i class="fa-brands fa-whatsapp pad"></i>
-                          WhatsApp
+                          <a
+                            className="btn whats"
+                            href="http://www.whatsapp.com"
+                            target="_blank"
+                          >
+                            <i class="fa-brands fa-whatsapp pad"></i>
+                            WhatsApp
                           </a>
-                          <div className="btn love fav" onClick={()=>{favicon(ele)}}>
-                          <i class="fa-sharp fa-solid fa-heart"></i>
+                          <div
+                            className="btn love fav"
+                            onClick={() => {
+                              favicon(ele);
+                            }}
+                          >
+                            <i class="fa-sharp fa-solid fa-heart"></i>
                           </div>
-                         <Link to="/item" onClick={()=>{additem(ele)}} className="btn "><i class="fa-solid fa-images"></i></Link>
+                          <Link
+                            to="/item"
+                            onClick={() => {
+                              additem(ele);
+                            }}
+                            className="btn "
+                          >
+                            <i class="fa-solid fa-images"></i>
+                          </Link>
                         </div>
                       </div>
                     </div>

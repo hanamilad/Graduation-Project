@@ -102,14 +102,68 @@
 .contact .fav .fa-heart {
   cursor: pointer;
 }
-@media only screen and (max-width:760px){
-  .details-contact{
-    grid-template-columns: auto ;
+
+/* ///////////// */
+/* more detalies */
+.more-detailes {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-items: start;
+  padding: 0 30px;
+}
+.more-detailes .location .map {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 15px;
+}
+.more-detailes .location .map .map-background {
+  position: relative;
+  background-image: url("https://www.propertyfinder.eg/dist/common/assets/c70d76248e.map.svg");
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.more-detailes .location .map .map-background .btn {
+  position: absolute;
+  top: 35%;
+  right: 35%;
+  color: blue;
+  background-color: white;
+  font-weight: bolder;
+}
+.more-detailes .Agent-broker {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px;
+}
+.more-detailes .Agent-broker .phot {
+  width: 150px;
+  height: 150px;
+}
+.more-detailes .Agent-broker .phot img {
+  max-width: 100%;
+  border-radius: 40%;
+}
+.more-detailes .Agent-broker .name-agent {
+  font-family: cursive;
+  font-weight: bolder;
+}
+.Description_for_user {
+  padding: 0 20px;
+}
+/* /////////////////////////// */
+@media only screen and (max-width: 760px) {
+  .details-contact {
+    grid-template-columns: auto;
   }
-  .simpledetails{
-    margin-left:5px ;
+  .simpledetails {
+    margin-left: 5px;
   }
   .simpledetails span {
     margin-left: 20px;
-}
+  }
+  .more-detailes {
+    grid-template-columns: auto;
+  }
 }

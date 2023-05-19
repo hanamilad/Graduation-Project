@@ -21,25 +21,12 @@ form {
   width: 50%;
   cursor: pointer;
 }
-.Resgistration {
-  width: 50%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  cursor: pointer;
-}
-.raido {
-  display: flex;
-  justify-content: space-between;
-}
 .Login .active {
   background-color: blue;
   border-radius: 50px;
   color: #fff;
 }
-.newaccount {
-  text-align: center;
-}
+
 /* /////////////////////////////////// */
 .title-Name {
   font-size: large;
@@ -58,4 +45,6 @@ form {
   margin-top: 25px;
   text-align: center;
 }
-
+.Googelbtn{
+  text-align: center;
+}

@@ -22,7 +22,7 @@ const Navbar1 = () => {
   return (
     <header>
       <h3 className="LOGOFONT">
-        <Link  to="/">
+        <Link  to="/home">
         SpaceKey <br />
         HomeLaunch
         </Link>
@@ -34,7 +34,7 @@ const Navbar1 = () => {
         <NavLink activeClassName="active" to="/ourclint">Our clients</NavLink>
         {user ? (
           <>
-          <Link to="/rej">
+          <Link to="/log">
             <div className="btn Navloginbtn " onClick={()=>Out()}>Logout</div>
           </Link>
 <Link to="/account" className="Nameuser">

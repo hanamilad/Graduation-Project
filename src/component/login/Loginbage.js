@@ -5,34 +5,31 @@ import "./Login.css";
 import { Link, NavLink } from "react-router-dom";
 
 const Loginbage = () => {
-  const [email, setemail] = useState("");
-  const [pas, setpas] = useState("");
-  const dispatch = useDispatch();
-  const users = (e) => {
-    e.preventDefault()
-    dispatch(
-      login({
-        email: email,
-        name:email.slice(0,1),
-        pas: pas,
-        loggin: true,
-      })
-    );
-    window.location =window.location.protocol + "//"+ window.location.hostname +":" + window.location.port + "/";
-  };
+  // const [email, setemail] = useState("");
+  // const [pas, setpas] = useState("");
+  // const dispatch = useDispatch();
+  // const users = (e) => {
+  //   e.preventDefault()
+  //   dispatch(
+  //     login({
+  //       email: email,
+  //       name:email.slice(0,1),
+  //       pas: pas,
+  //       loggin: true,
+  //     })
+  //   );
+  //   window.location =window.location.protocol + "//"+ window.location.hostname +":" + window.location.port + "/";
+  // };
   return (
     <div className="Login" id="login">
-      <Link to="/" className="title-Name">SpaceKey HomeLaunch</Link>
-      <form action="" onSubmit={(e) => users(e)}>
+      <Link to="/home" className="title-Name">
+        SpaceKey HomeLaunch
+      </Link>
+      {/* <form action="" onSubmit={(e) => users(e)}>
         <div className="logation mb-3">
           <NavLink to="/log" activeClassName="active">
             <div className="Log active " >
               Login
-            </div>
-          </NavLink>
-          <NavLink to="/rej" activeClassName="active">
-            <div className="Resgistration ">
-              Resgistration
             </div>
           </NavLink>
         </div>
@@ -56,27 +53,18 @@ const Loginbage = () => {
             onChange={(e) => setpas(e.target.value)}
           />
         </div>
-        <div className="raido mb-3">
-          <div className="radioinput">
-            <label htmlFor="check">Remmber me </label>
-            <input type="checkbox" name="check" id="check" />
-          </div>
-          <Link to="/forget">Forget password?</Link>
-        </div>
+       
         <input
           type="submit"
-          value="Login Now"
-          className="btn btn-primary mb-3 form-control"
+          value="login with Google"
+          className="btn btn-danger mb-3 form-control"
         />
-        <div className="newaccount">
-          Dont have an account?{" "}
-          <span>
-            <Link to="/rej" className="">
-              signup now
-            </Link>
-          </span>
-        </div>
-      </form>
+      </form> */}
+      <div className="Googelbtn ">
+        <Link to="/auth/Google" className="btn btn-danger">
+          login with Google
+        </Link>
+      </div>
     </div>
   );
 };
