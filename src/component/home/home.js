@@ -10,10 +10,6 @@ import { useRef } from "react";
 const Home = () => {
   const proerty = useRef();
   const flex = useRef();
-  const handelsubmit = (e) => {
-    e.preventDefault();
-    const date = new Date();
-  };
 
   return (
     <div className="home">
@@ -35,7 +31,7 @@ const Home = () => {
         </span>
 
         <div className="CardAdd" ref={flex}>
-          <form action="" onSubmit={handelsubmit}>
+          <form action="">
             <label htmlFor="Add proerty">Titel:</label>
             <input
               required
@@ -43,20 +39,26 @@ const Home = () => {
               id="Add proerty"
               placeholder="Add Titel for proerty"
               className="form-control"
+              name="Titel"
             />
             <br />
             <div className="flex">
               <div className="">
                 <label htmlFor="Add Type">Type:</label>
-                <Select options={datacity} placeholder="type" />
+                <Select options={datacity} placeholder="type" name="Type" />
               </div>
               <div className="">
                 <label htmlFor="Your name">Your name:</label>
-                <input type="text" className="form-control" />
+                <input type="text" className="form-control" name="name" />
               </div>
               <div className="">
                 <label htmlFor="Add Price">Price:</label>
-                <input type="number" id="Add Price" className="form-control" />
+                <input
+                  type="number"
+                  id="Add Price"
+                  className="form-control"
+                  name="Price"
+                />
               </div>
               <div className="">
                 <label htmlFor="AddBedrooms">Bedrooms:</label>
@@ -64,6 +66,7 @@ const Home = () => {
                   type="number"
                   id="AddBedrooms"
                   className="form-control"
+                  name="Price"
                 />
               </div>
               <div className="">
@@ -72,6 +75,7 @@ const Home = () => {
                   type="number"
                   id="AddBathrooms"
                   className="form-control"
+                  name="Bathrooms"
                 />
               </div>
               <div className="">
@@ -80,23 +84,37 @@ const Home = () => {
                   type="number"
                   id="AddPropertySize"
                   className="form-control"
+                  name="PropertySize"
                 />
               </div>
             </div>
             <br />
             <label htmlFor="Addnumber">number:</label>
-            <input type="number" id="Addnumber" className="form-control" />
+            <input
+              type="number"
+              id="Addnumber"
+              className="form-control"
+              name="number"
+            />
             <br />
-
             <label htmlFor="Addlocation">location:</label>
-            <input type="text" id="Addlocation" className="form-control" />
+            <input
+              type="text"
+              id="Addlocation"
+              className="form-control"
+              name="location"
+            />
             <br />
             <label htmlFor="moreDescription">MoreDescription:</label>
-            <input type="text" id="moreDescription" className="form-control" />
+            <input
+              type="text"
+              id="moreDescription"
+              className="form-control"
+              name="moreDescription"
+            />
             <br />
             <label htmlFor="Addphoto">photo:</label>
-            <input type="file" />
-
+            <input type="file" name="imgs" />
             <div className="buttons">
               <button
                 className="btn btn-danger"

@@ -27,7 +27,6 @@ form {
   color: #fff;
 }
 
-/* /////////////////////////////////// */
 .title-Name {
   font-size: large;
   font-weight: bold;
@@ -43,8 +42,5 @@ form {
 }
 .sign {
   margin-top: 25px;
-  text-align: center;
-}
-.Googelbtn{
   text-align: center;
 }

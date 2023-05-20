@@ -1,36 +1,40 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { login } from "../../redux/counterSlice";
 import "./Login.css";
 import { Link, NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/counterSlice";
 
 const Loginbage = () => {
-  // const [email, setemail] = useState("");
-  // const [pas, setpas] = useState("");
-  // const dispatch = useDispatch();
-  // const users = (e) => {
-  //   e.preventDefault()
-  //   dispatch(
-  //     login({
-  //       email: email,
-  //       name:email.slice(0,1),
-  //       pas: pas,
-  //       loggin: true,
-  //     })
-  //   );
-  //   window.location =window.location.protocol + "//"+ window.location.hostname +":" + window.location.port + "/";
-  // };
+  const [email, setemail] = useState("");
+  const [pas, setpas] = useState("");
+  const dispatch = useDispatch();
+  const users = (e) => {
+    e.preventDefault();
+    dispatch(
+      login({
+        email: email,
+        name: email.slice(0, 1),
+        pas: pas,
+        loggin: true,
+      })
+    );
+    window.location =
+      window.location.protocol +
+      "//" +
+      window.location.hostname +
+      ":" +
+      window.location.port +
+      "/";
+  };
   return (
     <div className="Login" id="login">
-      <Link to="/home" className="title-Name">
+      <Link to="/" className="title-Name">
         SpaceKey HomeLaunch
       </Link>
-      {/* <form action="" onSubmit={(e) => users(e)}>
+      <form action="" onSubmit={(e) => users(e)}>
         <div className="logation mb-3">
           <NavLink to="/log" activeClassName="active">
-            <div className="Log active " >
-              Login
-            </div>
+            <div className="Log active ">Login</div>
           </NavLink>
         </div>
         <div className="email mb-3">
@@ -53,18 +57,13 @@ const Loginbage = () => {
             onChange={(e) => setpas(e.target.value)}
           />
         </div>
-       
+
         <input
           type="submit"
-          value="login with Google"
+          value="login "
           className="btn btn-danger mb-3 form-control"
         />
-      </form> */}
-      <div className="Googelbtn ">
-        <Link to="/auth/Google" className="btn btn-danger">
-          login with Google
-        </Link>
-      </div>
+      </form>
     </div>
   );
 };

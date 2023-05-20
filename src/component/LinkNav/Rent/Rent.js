@@ -47,7 +47,7 @@ dispatch(AdditemInfavpage(item))
           <div className="row">
             <div className="col-12">
               <div className="first-line">
-                <Link to="/home">
+                <Link to="/">
                   <i class="fa-solid fa-house"></i>
                 </Link>
                 <span className="shap"> > </span>
