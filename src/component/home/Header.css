@@ -11,6 +11,8 @@
   position: relative;
   width: 100%;
   height: 60vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .Header .rent:hover {
   background-color: #80808024;
@@ -41,8 +43,10 @@
   color: #ef5e4e;
   font-weight: bold;
   border: 1px solid #0000003b;
-  margin-left: 10px;
   text-align: center;
+}
+.submitbtn i {
+margin-top: 10px;
 }
 .submitbtn:hover {
   color: #ef5e4e;

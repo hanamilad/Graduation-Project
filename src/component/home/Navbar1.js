@@ -21,8 +21,7 @@ const Navbar1 = () => {
     <header>
       <h3 className="LOGOFONT">
         <Link to="/">
-          SpaceKey <br />
-          HomeLaunch
+          SpaceKey HomeLaunch
         </Link>
       </h3>
       <nav ref={navRef}>

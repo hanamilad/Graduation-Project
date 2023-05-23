@@ -1,32 +1,146 @@
-.Login {
-  height: 100vh !important;
-  margin: auto;
+.heading {
+  font-size: 40px;
+  font-weight: 600;
+  color: #2c444e;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-form {
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-  margin: 50px auto;
-  width: fit-content;
-  padding: 15px;
+.form_container {
+  display: flex;
+  margin-top: 45px;
+  width: 800px;
+  height: 450px;
+  background-color: white;
+  box-shadow: 3px 4px 36px -6px rgba(0, 0, 0, 0.4);
+  border-radius: 50px;
 }
 
-.logation {
+.left {
+  flex: 1.5;
+  overflow: hidden;
   position: relative;
-  text-align: center;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
-.logation a {
-  text-decoration: none;
+
+.img {
+  width: 160%;
+  position: absolute;
+  left: -150px;
+  top: -50px;
 }
-.Log {
-  width: 50%;
+
+.right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.from_heading {
+  font-size: 25px;
+  font-weight: 400;
+  color: #2c444e;
+  margin-bottom: 30px;
+}
+
+.input {
+  width: 320px;
+  height: 35px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #2c444e;
+  border-radius: 2px;
+}
+
+.Login .btn,
+.Signup .btn {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 25px;
+  color: white;
+  background-color: #ffc801;
+  border-radius: 12px;
+  margin: 10px 0 0 0;
+  outline: none;
+  border: none;
   cursor: pointer;
 }
-.Login .active {
-  background-color: blue;
-  border-radius: 50px;
-  color: #fff;
+
+.text {
+  font-size: 14px;
+  color: #2c444e;
+  margin: 5px 0;
+  padding: 0;
 }
 
+.text > a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffc801;
+}
+
+.google_btn {
+  width: 230px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
+    rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  color: #2c444e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.Facebook_btn {
+  width: 230px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #2d4373;
+  box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
+    rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.google_btn > img,
+.Facebook_btn > img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.google_btn > span {
+  margin-left: 10px;
+}
+@media only screen and (max-width: 820px) {
+  .form_container {
+    width: 100%;
+  }
+  .left {
+    display: none;
+  }
+}
+/* /////////////////// */
 .title-Name {
   font-size: large;
   font-weight: bold;
@@ -36,11 +150,4 @@ form {
   padding: 10px;
   text-decoration: none;
   display: block;
-}
-.continue {
-  background-color: rgb(108, 108, 188);
-}
-.sign {
-  margin-top: 25px;
-  text-align: center;
 }

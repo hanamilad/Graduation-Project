@@ -9,14 +9,12 @@ import {
   Contact,
   DeletAll,
   favcounter,
-  mynotes,
 } from "../../redux/counterSlice";
 import Select from "react-select";
 
 const Account = () => {
   const counterfav = useSelector(favcounter);
   const countercontact = useSelector(Contact);
-  const countermynote = useSelector(mynotes);
   const dispatch = useDispatch();
 
   const delet = () => {
@@ -59,13 +57,6 @@ const Account = () => {
               className="item"
             >
               Contacted properties({countercontact})
-            </NavLink>
-            <NavLink
-              to="/mynotes"
-              activeClassName="activelineaccunt"
-              className="item"
-            >
-              my notes({countermynote})
             </NavLink>
           </div>
           <div className="col-lg-8 col-sm-12">

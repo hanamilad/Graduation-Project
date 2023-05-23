@@ -24,8 +24,8 @@ const Header = () => {
             name="search"
           />
           <Select options={datacity} placeholder="type" name="type" />
-          <Select isMulti options={databed} placeholder="Bed" name="bed" />
-          <Select isMulti options={databed} placeholder="Bath " name="bath" />
+          <Select  options={databed} placeholder="Bed" name="bed" />
+          <Select  options={databed} placeholder="Bath " name="bath" />
           <Select
             options={min_price}
             placeholder="Min-price "
@@ -36,7 +36,7 @@ const Header = () => {
             placeholder="Max-price "
             name="max-price"
           />
-          <Link to="/api/properties" className="submitbtn" type="submit">
+          <Link to="" className="submitbtn" type="submit">
             <i className="fa-solid fa-magnifying-glass"></i>
           </Link>
         </div>

@@ -13,12 +13,15 @@ import About from "./component/USEFUL_LINKS/About_us/About";
 import PrivacyPolicy from "./component/USEFUL_LINKS/PrivacyPolicy/PrivacyPolicy";
 import Cookies from "./component/USEFUL_LINKS/CookiesPolicy.js/Cookies";
 import Contacted from "./component/account/Contacted/Contacted";
-import Notes from "./component/account/Note/Notes";
 import Terms2 from "./component/USEFUL_LINKS/Terms&Conditions/Terms2";
 import Broker from "./component/LinkNav/Ourclint/broker/Broker";
+import Signup from "./component/login/Signup";
+
 
 function App() {
+
   return (
+ 
     <BrowserRouter>
       <Routes>
         <Route element={<Home />} path="/" />
@@ -26,6 +29,7 @@ function App() {
         <Route element={<Account />} path="/account" />
         <Route element={<Item />} path="/item" />
         <Route element={<Buy />} path="/buy" />
+        <Route element={<Signup />} path="/signup" />
         <Route element={<Rent />} path="/rent" />
         <Route element={<Commercial />} path="/commercial" />
         <Route element={<Ourclint />} path="/ourclint" />
@@ -34,7 +38,6 @@ function App() {
         <Route element={<PrivacyPolicy />} path="/Privacy" />
         <Route element={<Cookies />} path="/Cookies" />
         <Route element={<Contacted />} path="/Contacted" />
-        <Route element={<Notes />} path="/mynotes" />
         <Route element={<Terms2 />} path="/forAgent" />
         <Route element={<Broker />} path="/ourclint/broker" />
       </Routes>

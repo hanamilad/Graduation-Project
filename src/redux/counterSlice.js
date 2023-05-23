@@ -17,7 +17,6 @@ export const counterSlice = createSlice({
       ? localStorage.getItem("favcount")
       : 0,
     Contacted: 0,
-    mynotes: 0,
   },
   reducers: {
     login: (state, action) => {
@@ -158,6 +157,6 @@ export const selectoritem = (state) => state.user.item;
 export const selectoraccont = (state) => state.user.accunt;
 export const favcounter = (state) => state.user.favcount;
 export const Contact = (state) => state.user.Contacted;
-export const mynotes = (state) => state.user.mynotes;
+
 
 export default counterSlice.reducer;

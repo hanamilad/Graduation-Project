@@ -22,8 +22,8 @@ const Mainsection = () => {
         </div>
         {data.map((data) => {
           return (
-            <Link to="/item" onClick={()=>{additem(data)}}  className="col-lg-4 col-sm-12 allview">
-              <div className="card" style={{ width: "auto" }} key={data.id}>
+            <Link to="/item" onClick={()=>{additem(data)}}  className="col-lg-4 col-sm-12 allview" key={data.id}>
+              <div className="card" style={{ width: "auto" }} >
                 <img src={data.img} className="card-img-top" alt="..." />
                 <div className="card-body">
                   <p className="card-text description">{data.description}</p>

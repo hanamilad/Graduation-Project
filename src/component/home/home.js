@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import Navbar1 from "./Navbar1";
 import Mainsection from "../sesction/Mainsection";
@@ -7,7 +7,11 @@ import "./Header.css";
 import Select from "react-select";
 import { datacity } from "../../Json/Data";
 import { useRef } from "react";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
+
 const Home = () => {
+  const [value, setValue] = useState();
   const proerty = useRef();
   const flex = useRef();
 
@@ -41,15 +45,10 @@ const Home = () => {
               className="form-control"
               name="Titel"
             />
-            <br />
             <div className="flex">
               <div className="">
                 <label htmlFor="Add Type">Type:</label>
                 <Select options={datacity} placeholder="type" name="Type" />
-              </div>
-              <div className="">
-                <label htmlFor="Your name">Your name:</label>
-                <input type="text" className="form-control" name="name" />
               </div>
               <div className="">
                 <label htmlFor="Add Price">Price:</label>
@@ -87,16 +86,18 @@ const Home = () => {
                   name="PropertySize"
                 />
               </div>
-            </div>
-            <br />
-            <label htmlFor="Addnumber">number:</label>
-            <input
-              type="number"
-              id="Addnumber"
-              className="form-control"
-              name="number"
+           
+            <div className="">
+            <PhoneInput
+              placeholder="Enter phone number"
+              className="input"
+              value={value}
+              onChange={setValue}
+              numberInputProps={{name :"phone"}}
+              
             />
-            <br />
+             </div>
+            </div>
             <label htmlFor="Addlocation">location:</label>
             <input
               type="text"
@@ -104,7 +105,6 @@ const Home = () => {
               className="form-control"
               name="location"
             />
-            <br />
             <label htmlFor="moreDescription">MoreDescription:</label>
             <input
               type="text"
@@ -112,7 +112,6 @@ const Home = () => {
               className="form-control"
               name="moreDescription"
             />
-            <br />
             <label htmlFor="Addphoto">photo:</label>
             <input type="file" name="imgs" />
             <div className="buttons">
